@@ -18,7 +18,7 @@ app.post("/v1/getAllUsers", auth(), employeeController.getAll)
 
 app.post("/v1/getByRole", [auth(), validator("getByRole")], employeeController.getByRole)
 
-app.post("/v1/saveEmployee", [auth(), validator("saveEmployee")], employeeController.saveEmployee)
+app.post("/v1/saveEmployee", [auth(), validator("saveEmployee")], employeeController.create)
 
 app.post('/v1/userLogin', validator("userLogin"), employeeController.userLogin);
 

@@ -13,16 +13,6 @@ const getByRole = async (req, res, next) => {
   }
 }
 
-const saveEmployee = async (req, res, next) => {
-  try {
-    let request = req.body;
-    let result = await employeeService.saveEmployee(request);
-    res.send({ "Items": result });
-  } catch (error) {
-    next(error);
-  }
-}
-
 const userLogin = async (req, res, next) => {
   try {
       let request = req.body;
@@ -48,7 +38,6 @@ module.exports = {
   ...baseController,
 
   getByRole,
-  saveEmployee,
   userLogin,
   updateRole
 }

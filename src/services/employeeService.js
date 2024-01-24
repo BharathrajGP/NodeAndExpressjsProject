@@ -10,10 +10,6 @@ const getByRole = async (request) => {
   return user;
 }
 
-const saveEmployee = async (request) => {
-  return await employeeRepository.create(request);
-};
-
 const updateRole = async (request) => {
   const { currentUser: { userId: id }, role } = request;
   let _user = await employeeRepository.getById(id);
@@ -38,7 +34,6 @@ module.exports = {
   ...baseService,
 
   getByRole,
-  saveEmployee,
   userLogin,
   updateRole
 }
